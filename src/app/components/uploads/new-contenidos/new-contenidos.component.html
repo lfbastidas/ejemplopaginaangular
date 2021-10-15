@@ -1,0 +1,40 @@
+<div class="new-post-container">
+    <form [formGroup]="newContentForm" (ngSubmit)="addNewCont(newContentForm.value)">
+      <mat-form-field>
+        <mat-label>Titulo</mat-label>
+        <input matInput placeholder="Title Contenido" formControlName="tituloUp">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Contenido</mat-label>
+        <input matInput placeholder="Content post" formControlName="contenidoUp">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Materia" multiple formControlName="materiaUp">
+          <mat-option value="Ciencias Naturales">Ciencias Naturales</mat-option>
+          <mat-option value="Lenguaje">Lenguaje</mat-option>
+          <mat-option value="Informatica">Informatica</mat-option>
+          <mat-option value="Geometria">Geometria</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Grado" multiple formControlName="gradoUp">
+          <mat-option value="sexto">Sexto</mat-option>
+          <mat-option value="septimo">Septimo</mat-option>
+          <mat-option value="octavo">Octavo</mat-option>
+          <mat-option value="noveno">Noveno</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="dropzonepost">
+        <label class="custom-file">
+          <input role="button" type="file" formControlName="imageUp" (change)="handleImage($event)" />
+          <mat-icon>cloud_upload</mat-icon><span>CHOOSE IMAGE</span>
+        </label>
+      </div>
+      <mat-divider></mat-divider><br>
+      <div class="container-button">
+        <button mat-fab color="warn" type="submit" class="mat-flat-button" value="Save" [mat-dialog-close]="true">
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>

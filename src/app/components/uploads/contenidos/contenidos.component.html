@@ -1,0 +1,16 @@
+<mat-card-header>
+    <mat-card-title>
+        <a [routerLink]="['/contenidos', cont.id]">
+            {{ cont.tituloUp }}
+        </a>
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{ cont.materiaUp }} , {{cont.gradoUp }}
+    </mat-card-subtitle>
+</mat-card-header>
+<img matCardImage [src]="cont.imageUp" />
+<mat-card-content>
+    {{cont.contenidoUp}}
+</mat-card-content>
+<mat-card-footer>
+</mat-card-footer>

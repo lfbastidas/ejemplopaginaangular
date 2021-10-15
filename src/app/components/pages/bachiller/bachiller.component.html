@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="navbar">
+  <span color="primary" (click)="opened = !opened">
+    <mat-icon>menu</mat-icon>
+  </span>
+  <a routerLink="/recursos">
+    <mat-icon class="">reply</mat-icon>Retorna al Aula
+  </a>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sideNav [(opened)]="opened" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="sexto">
+        <mat-icon>scatter_plot</mat-icon>Sexto
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="septimo">
+        <mat-icon>batch_prediction</mat-icon>Septimo
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="octavo">
+        <mat-icon>scatter_plot</mat-icon>Octavo
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="noveno">
+        <mat-icon>batch_prediction</mat-icon>Noveno
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="decimo">
+        <mat-icon>scatter_plot</mat-icon>Decimo
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="once">
+        <mat-icon>batch_prediction</mat-icon>Once
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

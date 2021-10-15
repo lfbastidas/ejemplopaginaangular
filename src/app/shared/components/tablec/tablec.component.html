@@ -1,0 +1,3699 @@
+<mat-tab-group>
+  <mat-tab label="Sexto">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sexto A
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!--Contenido del panel-->
+        <!--Materias-->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Artistica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>Agregar
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Catedra Afro.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Sociales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Const. Politica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Contabilidad.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Religiosa.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Fisica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Geometria.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ingles.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Lengua Castellana.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Matematicas
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Sistemas.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Quimica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <!--Fin Sexto A******-->
+
+
+
+
+    <!--Inicio Sexto B******-->
+
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sexto B
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!--Contenido del panel-->
+        <!--Materias-->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Artistica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Catedra Afro.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Sociales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Const. Politica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Contabilidad.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Religiosa.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Fisica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Geometria.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ingles.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Lengua Castellana.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Matematicas
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Sistemas.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Quimica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+
+  <!--FIn Sexto**************-->
+
+
+  <!--Inicio Septimo*********-->
+  <mat-tab label="Septimo">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Septimo A
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!--Contenido del panel-->
+        <!--Materias-->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Artistica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Catedra Afro.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Sociales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Const. Politica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Contabilidad.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Religiosa.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Fisica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Geometria.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ingles.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Lengua Castellana.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Matematicas
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Sistemas.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Quimica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <!--Fin Sexto A******-->
+
+
+
+
+    <!--Inicio Septimo B******-->
+
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Septimo B
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!--Contenido del panel-->
+        <!--Materias-->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Artistica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Catedra Afro.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Naturales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ciencias Sociales.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Const. Politica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Contabilidad.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Religiosa.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Edu. Fisica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Geometria.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Ingles.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Lengua Castellana.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Matematicas
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Sistemas.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!--Materias-->
+              <mat-panel-title>
+                Quimica.
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!--COntent-->
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="container-btn-new">
+              <button mat-stroked-button (click)="onNewCont()">
+                <mat-icon>post_add</mat-icon>
+              </button>
+            </div>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <!-- ID Column -->
+                <ng-container matColumnDef="tituloUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Contenido</th>
+                  <td mat-cell *matCellDef="let row"> {{row.tituloUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="materiaUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Materia</th>
+                  <td mat-cell *matCellDef="let row"> {{row.materiaUp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gradoUp">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Grado </th>
+                  <td mat-cell *matCellDef="let row"> {{ row.gradoUp }} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones</th>
+                  <td mat-cell *matCellDef="let row">
+                    <button mat-stroked-button color="warn" (click)="onDeletePost(row)">
+                      <mat-icon class="mat-18">delete</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="accent" (click)="onEditPost(row)">
+                      <mat-icon class="mat-18">edit</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+  <!--Fin Septimo*******-->
+
+  <mat-tab label="Octavo"></mat-tab>
+  <mat-tab label="Noveno"></mat-tab>
+  <mat-tab label="Decimo"></mat-tab>
+  <mat-tab label="Once"></mat-tab>
+
+
+</mat-tab-group>

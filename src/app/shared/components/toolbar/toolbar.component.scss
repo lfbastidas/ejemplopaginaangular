@@ -1,0 +1,57 @@
+.docs-navbar-header
+{display:flex;
+flex-wrap:wrap;
+align-items:center;
+padding:4px 16px}
+
+.docs-navbar-heade > .mat-button:last-child{
+    margin-left:auto
+}
+.flex-spacer
+{flex-grow:1}
+.docs-angular-logo
+{height:26px;margin:0 4px 3px 0;vertical-align:middle}
+.docs-github-logo
+{height:21px;margin:0 7px 2px 0;vertical-align:middle}
+.docs-navbar-link
+{text-decoration:inherit;flex:1}
+.docs-navbar, 
+.docs-navbar-show-small
+{display:none}
+.skip-link-wrapper
+{position:absolute;top:10px;left:50%;transform:translateX(-50%);border-radius:5px}
+@media (max-width:720px)
+{.docs-navbar-hide-small
+    {display:none}.docs-navbar-show-small
+    {display:block}.docs-navbar{display:flex}
+    .docs-navbar--github-logo{margin:0}}
+//a
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+}
+.mat-focus-indicator, .mat-mdc-focus-indicator {
+    position: relative;
+}
+.mat-button-focus-overlay {
+    background: #000;
+}
+.mat-button, .mat-icon-button, .mat-stroked-button {
+    color: inherit;
+    background: transparent;
+}

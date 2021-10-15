@@ -1,0 +1,1022 @@
+<h2>Contenidos Grado Septimo</h2>
+<mat-tab-group>
+  <mat-tab label="Sexto A">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Artistica
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Catedra Afro
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Naturales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Sociales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Const. Politica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Contabilidad.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Religiosa.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Fisica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Geometria.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ingles.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lengua Castellana.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Matematicas
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sistemas.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Quimica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+
+  <!--*******SextoB********-->
+  <mat-tab label="Sexto B">
+    <!--Contenidos-->
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Artistica
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Catedra Afro
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Naturales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Sociales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Const. Politica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Contabilidad.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Religiosa.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Fisica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Geometria.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ingles.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lengua Castellana.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Matematicas
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sistemas.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Quimica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+   <!--*******SextoC********-->
+  <mat-tab label="Sexto C">
+    <!--Contenidos-->
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Artistica
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Catedra Afro
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Naturales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ciencias Sociales
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Const. Politica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Contabilidad.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Religiosa.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edu. Fisica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Geometria.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Ingles.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lengua Castellana.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Matematicas
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sistemas.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Quimica.
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngIf="contents$ | async as contents; else loading">
+          <div class="container">
+            <mat-card *ngFor="let cont of contents">
+              <app-contenidos [cont]="cont"></app-contenidos>
+            </mat-card>
+          </div>
+        </div>
+        <ng-template #loading>
+          <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+</mat-tab-group>

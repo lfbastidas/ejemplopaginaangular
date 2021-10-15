@@ -1,0 +1,64 @@
+<input type="checkbox" id="cerrar">cerrar
+<label for="cerrar" id="btn-cerrar">
+    <div class="modal">
+        <div class="contenidos">
+            <img src="../../../../assets/images/video 2021.png" alt="">
+        </div>
+    </div>
+</label>
+
+<div>
+    
+</div>
+<div class="content" role="main" *ngIf="posts$ | async as posts; else loading">
+    <!-- Resources -->
+    <div class="">
+        <app-slider></app-slider>
+    </div>    
+    <h1>Recursos Educativos</h1>
+    <span>Aqui algunos links para ayudarte:</span>
+    <div class="card-container">
+        <a class="card" target="" rel="noopener" routerLink="/recursos">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg>
+
+            <span>Aula Virtual</span>
+
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+        <a class="card" target="_blank" rel="noopener"
+            href="https://aprende.colombiaaprende.edu.co/sites/default/files/naspublic/ContenidosAprender/index.html">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                    d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+            </svg>
+            <span>Aprender</span>
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+        <a class="card" target="" rel="noopener" routerLink="/calendar">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+            </svg>
+            <span>Calendario</span>
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+    </div>
+    <div class="container">
+        <div class="titulo-caja">
+            <h4>Actualidad institucional</h4>
+        </div>
+    </div>
+    <!-- Image and text -->
+    <mat-card *ngFor="let post of posts">
+        <app-post [post]="post"></app-post>
+    </mat-card>
+</div>
+<ng-template #loading>
+    <div>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+</ng-template>

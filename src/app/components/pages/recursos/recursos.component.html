@@ -1,0 +1,81 @@
+<div class="content">
+  <div class="titulo-caja">
+    <h1>Aula Virtual</h1>
+  </div>
+  <div class="">
+    <img src="assets/images/intrance.jpg" alt="" height="" width="100%">
+  </div>
+</div>
+<mat-divider></mat-divider>
+
+<div class="content-terminal">
+
+  <div class="titulo-caja">
+    <h1>Nuestra visión del futuro.</h1>
+  </div>
+
+  <input type="hidden" #selection>
+  <div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+      <span>Pre escolar</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+
+      <span>Primaria</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+
+      <span>Bachillerato</span>
+    </div>
+  </div>
+
+  <!-- Terminal -->
+  <div class="terminal" [ngSwitch]="selection.value">
+    <pre *ngSwitchDefault>
+<p>CONTENIDOS:</p>
+  <mat-divider></mat-divider>
+  <div class="example-button-row"><button mat-raised-button color="accent">Transición</button>
+  
+  <mat-divider></mat-divider>
+  
+<p>HERRAMIENTAS:</p>
+  <mat-divider></mat-divider>
+  <div class="example-button-row"><button mat-raised-button (click)="openBottomSheet()" color="warn">Google</button><button mat-raised-button (click)="openBottomMicrosoft()" color="accent">Microsoft</button><br>
+    <mat-divider></mat-divider>
+  </div>
+  </div>
+    </pre>
+    <pre *ngSwitchCase="'material'"><p>CONTENIDOS:</p>
+      <mat-divider></mat-divider>
+      <div class="example-button-row"><a routerLink="/primaria/primero"><button mat-raised-button color="accent">Primero</button></a><a routerLink="/primaria/segundo"><button mat-raised-button color="accent">Segundo</button></a><a routerLink="/primaria/tercero"><button mat-raised-button color="accent">Tercero</button></a><a routerLink="/primaria/cuarto"><button mat-raised-button color="accent">Cuarto</button></a><a routerLink="/primaria/quinto"><button mat-raised-button color="accent">Quinto</button></a>
+      
+      <mat-divider></mat-divider>
+      
+      <p>HERRAMIENTAS:</p>
+      <mat-divider></mat-divider>
+      <div class="example-button-row"><button mat-raised-button (click)="openBottomSheet()" color="warn">Google</button><button mat-raised-button (click)="openBottomMicrosoft()" color="accent">Microsoft</button><br>
+        <mat-divider></mat-divider>
+      </div>
+      </div></pre>
+    <pre *ngSwitchCase="'pwa'"><p>CONTENIDOS:</p>
+      <mat-divider></mat-divider>
+      <div class="example-button-row"><a routerLink="/bachillerato/sexto"><button mat-raised-button color="accent">Sexto</button></a><a routerLink="/bachillerato/sptimo"><button mat-raised-button color="accent">Septimo</button></a><a routerLink="/bachillerato/octavo"><button mat-raised-button color="accent">Octavo</button></a><a routerLink="/bachillerato/noveno"><button mat-raised-button color="accent">Noveno</button></a><a routerLink="/bachillerato/decimo"><button mat-raised-button color="accent">Decimo</button></a><a routerLink="/bachillerato/once"><button mat-raised-button color="accent">Once</button></a>
+
+      <mat-divider></mat-divider>
+      
+      <p>HERRAMIENTAS:</p>
+      <mat-divider></mat-divider>
+      <div class="example-button-row"><button mat-raised-button (click)="openBottomSheet()" color="warn">Google</button><button mat-raised-button (click)="openBottomMicrosoft()" color="accent">Microsoft</button><br>
+        <mat-divider></mat-divider>
+      </div>
+      </div></pre>
+  </div>
+</div>

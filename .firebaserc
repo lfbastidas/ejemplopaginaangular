@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sagradafam-c5bd1": {
+      "hosting": {
+        "sg-web": [
+          "sagradafam-c5bd1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sagradafam-c5bd1"
+  }
+}
